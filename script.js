@@ -46,19 +46,19 @@ class Player {
 
   collisionCheck(distance) {
     //for window border
-    if (player.width + player.x - 50 < 0) {
+    if (player.width + player.x - canvas.width * .05 < 0) {
       this.clear();
       player.x = player.x + player.width;
     }
-    if (player.x - player.width + 100 > canvas.width) {
+    if (player.x - player.width + canvas.width * .1 > canvas.width) {
       this.clear();
       player.x = player.x - player.width;
     }
-    if (player.y + player.height - 50 < 0) {
+    if (player.y + player.height - canvas.height * .05 < 0) {
       this.clear();
       player.y = player.y + player.height;
     }
-    if (player.y - player.height + 100 > canvas.height) {
+    if (player.y - player.height + canvas.height * .1 > canvas.height) {
       this.clear();
       player.y = player.y - player.height;
     }
@@ -110,7 +110,7 @@ class PlayerProjectiles {
   }
 }
 
-let projectile;
+let projectile = [];
 let player;
 let base;
 
@@ -245,7 +245,7 @@ projectile = new PlayerProjectiles(
   velocity,
   'white'
 );*/
-base = new Base(canvas.width / 2, canvas.height / 2, 80, '#ffffff');
+base = new Base(canvas.width / 2, canvas.height / 2, canvas.width * .15, '#ffffff');
 base.draw();
 setInterval(function test() {
   c.fill();
