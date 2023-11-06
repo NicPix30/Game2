@@ -152,13 +152,7 @@ setInterval(function test() {
   player.collisionCheck(player.getDistance(player.x, base.x, player.y, base.y));
 }, .001);
 
-setInterval(function test() {
-  console.log(
-    player.collisionCheck(
-      player.getDistance(player.x, base.x, player.y, base.y)
-    )
-  );
-}, 1000);
+
 
 // Press of the W key.
 addEventListener('keydown', (event) => {
@@ -237,6 +231,10 @@ player = new Player(
   0.05 * canvas.width,
   'white'
 );
+document.addEventListener('click', ShootProjectile())
+function ShootProjectile(){
+  console.log("test");
+}
 /*
 projectile = new PlayerProjectiles(
   canvas.width / 2,
